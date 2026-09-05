@@ -1,0 +1,141 @@
+[
+  {
+    "slug": "najafi-network",
+    "domainLabel": "najafi.ae network",
+    "tag": "Multi-brand · GCC + Europe · E-commerce infrastructure",
+    "title": "Najafi Cosmetics — Multi-Region E-commerce Network",
+    "summary": "Sole developer of seven storefronts across three continents, each built for a different market, brand division or customer type — retail, wholesale, professional and two international Oserth markets.",
+    "linkType": "Case study",
+    "stats": [
+      { "value": "7", "label": "Storefronts built" },
+      { "value": "5", "label": "Regions launched" },
+      { "value": "5,000+", "label": "SKUs managed" }
+    ],
+    "description": [
+      "Najafi Cosmetics sells across multiple brands and multiple regions, and needed a separate storefront for each — rather than forcing retail, wholesale, professional and international buyers through one generic site.",
+      "I built and launched seven websites from scratch: najafi.ae (the main GCC retail store), pro.najafi.ae (a professional division for salons and industry buyers), wh.najafi.ae (a wholesale B2B portal with its own pricing logic), and four Oserth storefronts covering the GCC (oserth.ae), Sweden (oserth.se), wider Europe (eu.oserth.com) and Western/international markets (oserth.com).",
+      "On top of the builds, I integrated Tabby, Tamara, Stripe and Paymob across the different regional checkouts, launched Oman, Kuwait, Bahrain, Qatar and Lebanon as additional subdomains, and now manage a combined catalogue of 5,000+ SKUs across all of them."
+    ],
+    "highlights": [
+      "Seven independent storefronts, one shared operations model",
+      "Region-specific payment gateways: Tabby, Tamara, Stripe, Paymob",
+      "Five additional country subdomains launched post-build",
+      "5,000+ SKU catalogue kept in sync across every storefront"
+    ]
+  },
+  {
+    "slug": "beauty-wallet",
+    "domainLabel": "najafi.ae/beauty-wallet",
+    "tag": "Loyalty programme · Retention · najafi.ae",
+    "title": "Najafi Beauty Wallet — Loyalty Programme",
+    "summary": "Designed and launched a loyalty programme from scratch to convert one-time beauty shoppers into repeat customers, growing the subscriber base and lifting repeat purchase rate.",
+    "linkType": "Case study",
+    "stats": [
+      { "value": "0 → 1", "label": "Built from scratch" },
+      { "value": "↑", "label": "Repeat purchase rate" },
+      { "value": "↑", "label": "Registered subscribers" }
+    ],
+    "description": [
+      "Najafi's biggest acquisition problem wasn't getting a first purchase — it was getting a second one. There was no structured reason for a customer to come back.",
+      "I introduced the Najafi Beauty Wallet, a loyalty programme layered onto the existing retail store, giving customers a reason to register, return and spend again. The programme significantly increased the subscriber base and repeat sales after launch.",
+      "This sat alongside the wider retention stack — email marketing and seasonal discount campaigns — that I plan and execute across the brand."
+    ],
+    "highlights": [
+      "Conceived, built and launched without an existing loyalty framework to build on",
+      "Directly tied to email marketing and seasonal campaign calendars",
+      "Measurable increase in repeat purchase behaviour post-launch"
+    ]
+  },
+  {
+    "slug": "oserth-amazon",
+    "domainLabel": "amazon.ae/oserth",
+    "tag": "Marketplace · Amazon · Brand registry",
+    "title": "Oserth — Amazon Brand Storefront & Marketplace Presence",
+    "summary": "Registered and built out Oserth's branded presence on Amazon, alongside Amazon Sponsored Ads management and FBA integration that grew sales across the wider catalogue.",
+    "linkType": "Case study",
+    "stats": [
+      { "value": "30%", "label": "Sales growth from FBA integration" },
+      { "value": "2", "label": "Amazon seller accounts managed" },
+      { "value": "2", "label": "Noon seller accounts managed" }
+    ],
+    "description": [
+      "Beyond the owned storefronts, a meaningful share of demand for Najafi's brands sits on marketplaces — Amazon and Noon chief among them.",
+      "I registered multiple brands on Amazon and built out a dedicated Oserth brand page on Amazon.ae, then ran Amazon Sponsored Ads and Amazon FBA integration across the catalogue — work that contributed to a 30% increase in sales.",
+      "Day to day, this means managing two Amazon seller accounts and two Noon seller accounts alongside the owned Shopify/WordPress stores, keeping pricing, listings and stock consistent everywhere the brand sells."
+    ],
+    "highlights": [
+      "Branded Amazon storefront built for Oserth",
+      "Amazon FBA integration and Sponsored Ads management",
+      "Four marketplace seller accounts run in parallel with owned stores"
+    ]
+  },
+  {
+    "slug": "specbrite-marketplace-ops",
+    "domainLabel": "specbrite.com",
+    "tag": "Agency · Multi-marketplace · Paid media",
+    "title": "Spec Brite Group — Marketplace & Ads Operations",
+    "summary": "Built and optimised Shopify/WordPress stores while running Meta, Google and Amazon Ads across multiple marketplace listings, with a consistent focus on ROAS.",
+    "linkType": "Case study",
+    "stats": [
+      { "value": "3", "label": "Ad platforms managed" },
+      { "value": "3+", "label": "Marketplaces synced" },
+      { "value": "Full", "label": "CRM & IT stack owned" }
+    ],
+    "description": [
+      "At Spec Brite Group I owned the full stack behind the company's online sales — the storefronts themselves, the marketplace listings, the ad campaigns driving traffic to them, and the CRM and IT systems underneath.",
+      "That meant building and optimising Shopify and WordPress stores, keeping product listings and pricing accurate across Shopify, Amazon, Noon and local marketplaces, and running Meta Ads, Google Ads and Amazon Ads with ROAS and conversions as the north star.",
+      "It also meant the less visible work: administering Zoho CRM workflows and automations, managing hosting/DNS/SSL, and running the company's Microsoft 365 environment and general IT support."
+    ],
+    "highlights": [
+      "End-to-end ownership: storefronts, marketplaces, ads, CRM, IT",
+      "Meta Ads, Google Ads and Amazon Ads managed concurrently",
+      "Zoho CRM workflow design and automation"
+    ]
+  },
+  {
+    "slug": "performance-tracking-stack",
+    "domainLabel": "Looker Studio dashboards",
+    "tag": "Analytics · GA4 · Tag Manager · Meta Pixel",
+    "title": "Performance Tracking Stack — GA4, GTM & Looker Studio",
+    "summary": "Set up the full tracking layer — GA4, Google Tag Manager and Meta Pixel — and built the Looker Studio dashboards the business now uses to track live performance.",
+    "linkType": "Case study",
+    "stats": [
+      { "value": "3", "label": "Tracking systems implemented" },
+      { "value": "Live", "label": "Looker Studio dashboards" },
+      { "value": "Multi-brand", "label": "Reporting coverage" }
+    ],
+    "description": [
+      "None of the ad spend or CRO work across Najafi's storefronts means much without accurate measurement underneath it — so setting up proper tracking was one of the first things I did.",
+      "I implemented Google Analytics 4, Google Tag Manager and Meta Pixel across the storefronts, then built dynamic Looker Studio dashboards so performance — traffic, conversion, ROAS, CAC — is visible in one place instead of scattered across ad platform logins.",
+      "These dashboards are what the team now checks day to day to decide where budget and attention go next."
+    ],
+    "highlights": [
+      "GA4, GTM and Meta Pixel implemented from scratch",
+      "Custom Looker Studio dashboards for live performance tracking",
+      "Used to inform day-to-day budget and campaign decisions"
+    ]
+  },
+  {
+    "slug": "freelance-builds",
+    "domainLabel": "Freelance client sites",
+    "tag": "Freelance · Shopify · WordPress · Magento · Wix",
+    "title": "Freelance E-commerce & Website Builds",
+    "summary": "Independent web development work since 2022 — designing, building and deploying custom websites and e-commerce stores end to end for clients outside full-time roles.",
+    "linkType": "Ongoing",
+    "stats": [
+      { "value": "2022", "label": "Started freelancing" },
+      { "value": "4", "label": "Platforms worked in" },
+      { "value": "End-to-end", "label": "Client ownership" }
+    ],
+    "description": [
+      "Alongside full-time roles, I've run a freelance web development practice since 2022 — building custom websites and e-commerce stores for clients on WordPress, Shopify, Magento and Wix.",
+      "Projects are managed end to end: initial design, build, deployment, and then training the client to manage their own content once the site is live.",
+      "This is also where a lot of the marketplace and dropshipping experience started — running order processing, customer service and fulfilment across eBay, AliExpress, Daraz and Kapruka between 2021 and 2022."
+    ],
+    "highlights": [
+      "Full client lifecycle: design, build, deploy, train",
+      "Comfortable across WordPress, Shopify, Magento and Wix",
+      "Open to new freelance projects — get in touch below"
+    ]
+  }
+]

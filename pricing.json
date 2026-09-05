@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Store Build",
+    "price": "$450",
+    "period": "one-time",
+    "description": "A single Shopify, WordPress or WooCommerce store, built and launched from scratch.",
+    "features": [
+      "Store setup & theme customisation",
+      "Up to 1 payment gateway integrated",
+      "GA4, Tag Manager & Meta Pixel setup",
+      "Mobile-responsive, SEO-ready structure",
+      "1 round of revisions"
+    ],
+    "cta": "Start a build",
+    "featured": false
+  },
+  {
+    "name": "Growth Retainer",
+    "price": "$800",
+    "period": "/ month",
+    "description": "Ongoing Meta & Google Ads management plus store optimisation for a single storefront.",
+    "features": [
+      "Meta Ads & Google Ads management",
+      "Monthly ROAS & CAC reporting via Looker Studio",
+      "CRO recommendations & A/B testing",
+      "SEO maintenance (on-page & technical)",
+      "Email/WhatsApp campaign support"
+    ],
+    "cta": "Talk about your store",
+    "featured": true
+  },
+  {
+    "name": "Full Operations",
+    "price": "Custom",
+    "period": "",
+    "description": "End-to-end e-commerce operations across multiple storefronts, marketplaces and regions — the same scope as my full-time work.",
+    "features": [
+      "Multi-region storefront management",
+      "Amazon, Noon & marketplace operations",
+      "Payment gateway integrations (Tabby, Tamara, Stripe, Paymob)",
+      "CRM, IT & analytics stack ownership",
+      "Dedicated monthly strategy calls"
+    ],
+    "cta": "Get a custom quote",
+    "featured": false
+  }
+]
