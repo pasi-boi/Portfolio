@@ -648,3 +648,19 @@ footer .foot-links a:hover{ color:var(--teal); }
   .hero{ padding:52px 0 60px; }
   .cta-strip .wrap{ flex-direction:column; align-items:flex-start; }
 }
+
+/* Hide browser bar and stats on image cards */
+.card-visual.has-image .card-browserbar,
+.card-visual.has-image .card-stats,
+.detail-visual.has-image .detail-browserbar,
+.detail-visual.has-image .detail-stats {
+  display: none;
+}
+
+/* Ensure the card has a fixed height for the image */
+.card-visual.has-image,
+.detail-visual.has-image {
+  min-height: 240px;
+  background-size: cover;
+  background-position: center;
+}
