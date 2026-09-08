@@ -304,10 +304,10 @@ section{ padding:84px 0; }
   color:var(--pure-white);
 }
 .card-visual.has-image{
-  min-height:210px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .card-visual.has-image::before{
   content:"";
