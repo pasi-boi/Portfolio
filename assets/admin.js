@@ -68,6 +68,7 @@ function syncProjectsFromDOM() {
       title: el.querySelector('[data-f="title"]').value.trim(),
       summary: el.querySelector('[data-f="summary"]').value.trim(),
       linkType: el.querySelector('[data-f="linkType"]').value.trim(),
+      image: el.querySelector('[data-f="image"]').value.trim(),
       stats: [0, 1, 2].map(function (i) {
         return {
           value: el.querySelector('[data-stat-value="' + i + '"]').value.trim(),
@@ -98,6 +99,7 @@ function renderProjectsAdmin() {
         '<label>Card summary (2-3 sentences)</label><textarea data-f="summary">' + escapeHtml(p.summary) + '</textarea>' +
         '<label style="margin-top:10px;">Full description (one paragraph per line)</label><textarea data-f="description" style="min-height:110px;">' + escapeHtml((p.description || []).join('\n')) + '</textarea>' +
         '<label style="margin-top:10px;">Key details / bullet points (one per line)</label><textarea data-f="highlights">' + escapeHtml((p.highlights || []).join('\n')) + '</textarea>' +
+        '<label style="margin-top:10px;">Cover image path (e.g. images/najafi-network.jpg \u2014 leave blank to use the default mock header)</label><input data-f="image" value="' + escapeAttr(p.image || '') + '">' +
         '<label style="margin-top:10px;">Link type label (e.g. "Case study", "Live", "Ongoing")</label><input data-f="linkType" value="' + escapeAttr(p.linkType) + '">' +
         '<label style="margin-top:10px;">Stats (up to 3, shown on the card and detail page)</label>' +
         '<div class="stat-fields">' +
@@ -127,6 +129,7 @@ function addProject() {
     title: 'New project',
     summary: '',
     linkType: 'Case study',
+    image: '',
     stats: [],
     description: [],
     highlights: []
@@ -215,7 +218,4 @@ function exportPricing() {
   download('pricing.json', pricingState);
 }
 
-// ---------- small escaping helpers (attribute-safe) ----------
-function escapeAttr(str) {
-  return escapeHtml(str).replace(/"/g, '&quot;');
-}
+// escapeAttr and escapeHtml now live in site.js (loaded before this file on admin.html).
