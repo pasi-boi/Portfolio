@@ -122,6 +122,11 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Safe to drop into an HTML attribute value (e.g. a style="background-image:url('...')" string).
+function escapeAttr(str) {
+  return escapeHtml(str).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+}
+
 // Renders the project card grid on the home page.
 function renderProjectCards(containerEl, projects) {
   if (!containerEl) return;
@@ -129,15 +134,17 @@ function renderProjectCards(containerEl, projects) {
     var stats = (p.stats || []).slice(0, 3).map(function (s) {
       return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
     }).join('');
+    var hasImage = !!p.image;
+    var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(p.image) + '\')"' : '';
     return (
       '<a class="project-card reveal" style="transition-delay:' + Math.min(i, 5) * 80 + 'ms" href="project.html?slug=' + encodeURIComponent(p.slug) + '">' +
-        '<div class="card-visual">' +
+        '<div class="card-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
           '<div class="card-browserbar">' +
             '<div class="dots"><span></span><span></span><span></span></div>' +
             '<div class="domain">' + escapeHtml(p.domainLabel || p.title) + '</div>' +
             '<div class="tagline">' + escapeHtml(p.tag) + '</div>' +
           '</div>' +
-          '<div class="card-stats">' + stats + '</div>' +
+          '<div class="card-stats" style="grid-template-columns:repeat(' + Math.max((p.stats || []).slice(0, 3).length, 1) + ',1fr)">' + stats + '</div>' +
         '</div>' +
         '<div class="card-body">' +
           '<div class="card-tag">' + escapeHtml(p.tag) + '</div>' +
@@ -173,17 +180,22 @@ function renderProjectDetail(project) {
     return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
   }).join('');
 
+  var hasImage = !!project.image;
+  var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(project.image) + '\')"' : '';
+
   heroWrap.innerHTML =
     '<div class="wrap">' +
       '<a class="back-link" href="index.html#projects">&larr; Back to all projects</a>' +
       '<div class="card-tag">' + escapeHtml(project.tag) + '</div>' +
       '<h1>' + escapeHtml(project.title) + '</h1>' +
       '<p class="summary">' + escapeHtml(project.summary) + '</p>' +
-      '<div class="detail-browserbar">' +
-        '<div class="dots"><span></span><span></span><span></span></div>' +
-        '<div class="domain">' + escapeHtml(project.domainLabel || project.title) + '</div>' +
+      '<div class="detail-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
+        '<div class="detail-browserbar">' +
+          '<div class="dots"><span></span><span></span><span></span></div>' +
+          '<div class="domain">' + escapeHtml(project.domainLabel || project.title) + '</div>' +
+        '</div>' +
+        '<div class="detail-stats" style="grid-template-columns:repeat(' + Math.max(project.stats ? project.stats.length : 1, 1) + ',1fr)">' + stats + '</div>' +
       '</div>' +
-      '<div class="detail-stats">' + stats + '</div>' +
     '</div>';
 
   var paragraphs = (project.description || []).map(function (p) {
