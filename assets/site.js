@@ -1,4 +1,7 @@
-// Shared behaviour across all pages: mobile nav toggle.
+// Shared behaviour across all pages: mobile nav toggle, nav scroll shadow,
+// scroll-reveal animations and animated number counters.
+var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
@@ -14,7 +17,91 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  var nav = document.querySelector('.nav');
+  if (nav) {
+    var onScroll = function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Auto-tag common content blocks as reveal targets, with a light stagger
+  // for anything sitting inside a grid/row so groups animate in sequence.
+  var autoSelectors = [
+    '.section-head', '.t-item', '.achieve-cell', '.skill-group',
+    '.edu-col', '.price-card', '.cta-strip .wrap > *', '.contact-section .wrap > *'
+  ];
+  document.querySelectorAll(autoSelectors.join(',')).forEach(function (el, i) {
+    el.classList.add('reveal');
+    if (!el.style.transitionDelay) {
+      el.style.transitionDelay = Math.min(i % 6, 5) * 70 + 'ms';
+    }
+  });
+
+  initScrollReveal();
+  initCounters(document);
 });
+
+// Observes every .reveal element currently in the DOM and fades/slides it in
+// the first time it enters the viewport. Safe to call again after injecting
+// new content (e.g. dynamically-rendered project/pricing cards).
+function initScrollReveal() {
+  var targets = document.querySelectorAll('.reveal:not(.is-visible)');
+  if (!targets.length) return;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function (el) { observer.observe(el); });
+}
+
+// Animates any [data-count] element's leading number from 0 up to its real
+// value once it scrolls into view. Non-numeric stats (e.g. "0 \u2192 1") are
+// left as static text. Call with a root element to scope the search.
+function initCounters(root) {
+  var els = root.querySelectorAll('.stat-num[data-count], .achieve-cell .num[data-count]');
+  if (!els.length) return;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+  var observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      runCount(entry.target);
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  els.forEach(function (el) { observer.observe(el); });
+}
+
+function runCount(el) {
+  var full = el.textContent;
+  var match = full.match(/^([\d,]+)(.*)$/);
+  if (!match) return;
+  var target = parseInt(match[1].replace(/,/g, ''), 10);
+  var suffix = match[2];
+  if (isNaN(target)) return;
+  var duration = 1100;
+  var start = null;
+  function step(ts) {
+    if (start === null) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var value = Math.round(target * eased);
+    el.textContent = value.toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = full;
+  }
+  requestAnimationFrame(step);
+}
 
 // Fetches /data/projects.json. Resolves to [] on failure so pages degrade gracefully.
 function loadProjects() {
@@ -38,12 +125,12 @@ function escapeHtml(str) {
 // Renders the project card grid on the home page.
 function renderProjectCards(containerEl, projects) {
   if (!containerEl) return;
-  containerEl.innerHTML = projects.map(function (p) {
+  containerEl.innerHTML = projects.map(function (p, i) {
     var stats = (p.stats || []).slice(0, 3).map(function (s) {
       return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
     }).join('');
     return (
-      '<a class="project-card" href="project.html?slug=' + encodeURIComponent(p.slug) + '">' +
+      '<a class="project-card reveal" style="transition-delay:' + Math.min(i, 5) * 80 + 'ms" href="project.html?slug=' + encodeURIComponent(p.slug) + '">' +
         '<div class="card-visual">' +
           '<div class="card-browserbar">' +
             '<div class="dots"><span></span><span></span><span></span></div>' +
@@ -109,11 +196,11 @@ function renderProjectDetail(project) {
 
   bodyWrap.innerHTML =
     '<div class="wrap">' +
-      '<div class="content">' +
+      '<div class="content reveal is-visible">' +
         '<h2>The project</h2>' +
         paragraphs +
         (highlights ? '<h2>Key details</h2><ul>' + highlights + '</ul>' : '') +
-        '<div class="detail-cta">' +
+        '<div class="detail-cta reveal">' +
           '<p>Interested in something like this for your business?</p>' +
           '<a class="btn btn-primary" href="index.html#contact">Get in touch</a>' +
         '</div>' +
@@ -133,12 +220,12 @@ function initProjectDetailPage() {
 // Renders pricing plan cards on the pricing page.
 function renderPricingCards(containerEl, plans) {
   if (!containerEl) return;
-  containerEl.innerHTML = plans.map(function (plan) {
+  containerEl.innerHTML = plans.map(function (plan, i) {
     var features = (plan.features || []).map(function (f) {
       return '<li>' + escapeHtml(f) + '</li>';
     }).join('');
     return (
-      '<div class="price-card' + (plan.featured ? ' featured' : '') + '">' +
+      '<div class="price-card reveal' + (plan.featured ? ' featured' : '') + '" style="transition-delay:' + i * 80 + 'ms">' +
         (plan.featured ? '<div class="price-badge">Most popular</div>' : '') +
         '<h3>' + escapeHtml(plan.name) + '</h3>' +
         '<div class="price">' + escapeHtml(plan.price) + (plan.period ? ' <small>' + escapeHtml(plan.period) + '</small>' : '') + '</div>' +
