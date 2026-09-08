@@ -42,60 +42,71 @@
       </div>
       <div class="stat-row">
         <div>
-          <div class="stat-num">7+</div>
+          <div class="stat-num" data-count>7+</div>
           <div class="stat-label">Years in e-commerce &amp; IT</div>
         </div>
         <div>
-          <div class="stat-num">7</div>
+          <div class="stat-num" data-count>7</div>
           <div class="stat-label">Websites built for one brand group</div>
         </div>
         <div>
-          <div class="stat-num">5</div>
+          <div class="stat-num" data-count>5</div>
           <div class="stat-label">Country subdomains launched</div>
         </div>
         <div>
-          <div class="stat-num">5,000+</div>
+          <div class="stat-num" data-count>5,000+</div>
           <div class="stat-label">SKUs managed across platforms</div>
         </div>
       </div>
     </div>
 
     <div class="net-card">
-      <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of najafi.ae as the central hub connected to six regional storefronts">
-        <g stroke="#1B8A73" stroke-width="1.2" opacity="0.55">
-          <line x1="170" y1="150" x2="170" y2="42"/>
-          <line x1="170" y1="150" x2="60" y2="90"/>
-          <line x1="170" y1="150" x2="280" y2="90"/>
-          <line x1="170" y1="150" x2="40" y2="210"/>
-          <line x1="170" y1="150" x2="300" y2="210"/>
-          <line x1="170" y1="150" x2="170" y2="262"/>
-        </g>
-        <g>
-          <circle cx="170" cy="150" r="30" fill="#0F6B57"/>
-          <text x="170" y="154" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#F7F9F7">najafi.ae</text>
-        </g>
-        <g font-family="IBM Plex Mono, monospace" font-size="8.6" fill="#D9F0E9">
-          <circle cx="170" cy="42" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="170" y="45" text-anchor="middle">pro.najafi</text>
-
-          <circle cx="60" cy="90" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="60" y="93" text-anchor="middle">wh.najafi</text>
-
-          <circle cx="280" cy="90" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="280" y="93" text-anchor="middle">oserth.ae</text>
-
-          <circle cx="40" cy="210" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="40" y="213" text-anchor="middle">oserth.se</text>
-
-          <circle cx="300" cy="210" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="300" y="209" text-anchor="middle">eu.oserth</text>
-          <text x="300" y="219" text-anchor="middle">.com</text>
-
-          <circle cx="170" cy="262" r="20" fill="#0B3D32" stroke="#1B8A73" stroke-width="1"/>
-          <text x="170" y="265" text-anchor="middle">oserth.com</text>
-        </g>
-      </svg>
-      <div class="cap">One e-commerce network, seven storefronts, three continents</div>
+      <div class="globe-wrap">
+        <div class="orbit-ring"><span class="orbit-dot"></span></div>
+        <div class="orbit-ring orbit-ring-2"><span class="orbit-dot"></span></div>
+        <svg class="globe-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating globe marking the regions Pasindu has built and launched e-commerce infrastructure in: UAE, Sri Lanka, Sweden and wider Europe">
+          <defs>
+            <radialGradient id="globeGrad" cx="35%" cy="32%" r="75%">
+              <stop offset="0%" stop-color="#1B8A73"/>
+              <stop offset="55%" stop-color="#0F6B57"/>
+              <stop offset="100%" stop-color="#062B24"/>
+            </radialGradient>
+          </defs>
+          <circle class="globe-sphere" cx="150" cy="150" r="128" fill="url(#globeGrad)"/>
+          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="30"/>
+          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="64"/>
+          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="98"/>
+          <ellipse class="meridian m1" cx="150" cy="150" rx="0" ry="128"/>
+          <ellipse class="meridian m2" cx="150" cy="150" rx="0" ry="128"/>
+          <ellipse class="meridian m3" cx="150" cy="150" rx="0" ry="128"/>
+          <ellipse class="meridian m4" cx="150" cy="150" rx="0" ry="128"/>
+          <ellipse class="meridian m5" cx="150" cy="150" rx="0" ry="128"/>
+          <circle class="globe-outline" cx="150" cy="150" r="128"/>
+          <g class="loc d1">
+            <circle class="loc-ping" cx="176" cy="150" r="4"/>
+            <circle class="loc-dot" cx="176" cy="150" r="4"/>
+          </g>
+          <g class="loc d2">
+            <circle class="loc-ping" cx="108" cy="188" r="4"/>
+            <circle class="loc-dot" cx="108" cy="188" r="4"/>
+          </g>
+          <g class="loc d3">
+            <circle class="loc-ping" cx="122" cy="86" r="4"/>
+            <circle class="loc-dot" cx="122" cy="86" r="4"/>
+          </g>
+          <g class="loc d4">
+            <circle class="loc-ping" cx="188" cy="104" r="4"/>
+            <circle class="loc-dot" cx="188" cy="104" r="4"/>
+          </g>
+        </svg>
+      </div>
+      <div class="globe-legend">
+        <span><i></i>UAE</span>
+        <span><i></i>Sri Lanka</span>
+        <span><i></i>Sweden</span>
+        <span><i></i>Europe</span>
+      </div>
+      <div class="cap">Building e-commerce infrastructure across four regions</div>
     </div>
   </div>
 </header>
@@ -172,27 +183,27 @@
     </div>
     <div class="achieve-grid">
       <div class="achieve-cell">
-        <div class="num">50%</div>
+        <div class="num" data-count>50%</div>
         <div class="label">Online store sales increase from targeted Meta &amp; Google Ads</div>
       </div>
       <div class="achieve-cell">
-        <div class="num">30%</div>
+        <div class="num" data-count>30%</div>
         <div class="label">Sales growth from Amazon FBA integration &amp; Amazon Ads</div>
       </div>
       <div class="achieve-cell">
-        <div class="num">7</div>
+        <div class="num" data-count>7</div>
         <div class="label">Websites built from scratch across GCC, Europe &amp; Western markets</div>
       </div>
       <div class="achieve-cell">
-        <div class="num">5</div>
+        <div class="num" data-count>5</div>
         <div class="label">Country subdomains launched — Oman, Kuwait, Bahrain, Qatar, Lebanon</div>
       </div>
       <div class="achieve-cell">
-        <div class="num">5,000+</div>
+        <div class="num" data-count>5,000+</div>
         <div class="label">SKUs managed across Shopify, Amazon and Noon</div>
       </div>
       <div class="achieve-cell">
-        <div class="num">3</div>
+        <div class="num" data-count>3</div>
         <div class="label">Person team led across e-commerce operations</div>
       </div>
     </div>
@@ -325,6 +336,8 @@
 <script>
   loadProjects().then(function (projects) {
     renderProjectCards(document.getElementById('projectGrid'), projects);
+    initScrollReveal();
+    initCounters(document.getElementById('projectGrid'));
   });
 </script>
 
