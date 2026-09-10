@@ -133,38 +133,38 @@
     "image": "images/Spec brite.png"
   },
   {
-    "slug": "performance-tracking-stack",
-    "domainLabel": "Looker Studio dashboards",
-    "tag": "Analytics \u00b7 GA4 \u00b7 Tag Manager \u00b7 Meta Pixel",
-    "title": "Performance Tracking Stack \u2014 GA4, GTM & Looker Studio",
-    "summary": "Set up the full tracking layer \u2014 GA4, Google Tag Manager and Meta Pixel \u2014 and built the Looker Studio dashboards the business now uses to track live performance.",
-    "linkType": "Case study",
-    "stats": [
-      {
-        "value": "3",
-        "label": "Tracking systems implemented"
-      },
-      {
-        "value": "Live",
-        "label": "Looker Studio dashboards"
-      },
-      {
-        "value": "Multi-brand",
-        "label": "Reporting coverage"
-      }
-    ],
-    "description": [
-      "None of the ad spend or CRO work across Najafi's storefronts means much without accurate measurement underneath it \u2014 so setting up proper tracking was one of the first things I did.",
-      "I implemented Google Analytics 4, Google Tag Manager and Meta Pixel across the storefronts, then built dynamic Looker Studio dashboards so performance \u2014 traffic, conversion, ROAS, CAC \u2014 is visible in one place instead of scattered across ad platform logins.",
-      "These dashboards are what the team now checks day to day to decide where budget and attention go next."
-    ],
-    "highlights": [
-      "GA4, GTM and Meta Pixel implemented from scratch",
-      "Custom Looker Studio dashboards for live performance tracking",
-      "Used to inform day-to-day budget and campaign decisions"
-    ],
-    "image": ""
-  },
+"slug": "wellness-terminal",
+"domainLabel": "wellnessterminal.com",
+"tag": "E-commerce · Shopify · Multi-country · UAE · Lebanon · Oman",
+"title": "Wellness Terminal — Multi-Country E-commerce Expansion",
+"summary": "Developed and managed multi-country e-commerce websites for Wellness Terminal across the UAE, Lebanon and Oman, using regional subdomains, Shopify and AWS DNS configuration to support localized market expansion.",
+"linkType": "Case study",
+"stats": [
+{
+"value": "3",
+"label": "Markets supported"
+},
+{
+"value": "Shopify",
+"label": "E-commerce platform"
+},
+{
+"value": "AWS",
+"label": "DNS infrastructure"
+}
+],
+"description": [
+"Wellness Terminal wanted to expand its online presence beyond its primary UAE market while maintaining a consistent brand and e-commerce experience across multiple countries.",
+"I developed and managed regional e-commerce websites under subdomains for the UAE, Lebanon and Oman markets, leveraging Shopify to provide a seamless and scalable e-commerce infrastructure across the different regions.",
+"I also configured DNS records through AWS to ensure reliable access to the regional storefronts. The project enabled Wellness Terminal to establish a stronger international presence while maintaining a consistent digital experience across all three markets."
+],
+"highlights": [
+"Multi-country e-commerce presence across UAE, Lebanon and Oman",
+"Shopify-based regional storefront development and management",
+"AWS DNS configuration for reliable regional access"
+],
+"image": "images/Screenshot 2026-09-10 155643.png"
+}
   {
     "slug": "freelance-builds",
     "domainLabel": "Freelance client sites",
