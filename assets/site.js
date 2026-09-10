@@ -132,7 +132,7 @@ function renderProjectCards(containerEl, projects) {
   if (!containerEl) return;
   containerEl.innerHTML = projects.map(function (p, i) {
     var stats = (p.stats || []).slice(0, 3).map(function (s) {
-      return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
+      return '<div>' + escapeHtml(s.value) + ' ' + escapeHtml(s.label) + '</div>';
     }).join('');
     var hasImage = !!p.image;
     var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(p.image) + '\')"' : '';
