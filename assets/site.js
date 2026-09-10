@@ -150,11 +150,11 @@ function renderProjectCards(containerEl, projects) {
         '<div class="card-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
           visualTop +
         '</div>' +
-        '<div class="card-stats" style="grid-template-columns:repeat(' + Math.max((p.stats || []).slice(0, 3).length, 1) + ',1fr)">' + stats + '</div>' +
         '<div class="card-body">' +
           '<div class="card-tag">' + escapeHtml(p.tag) + '</div>' +
           '<h3>' + escapeHtml(p.title) + '</h3>' +
           '<p>' + escapeHtml(p.summary) + '</p>' +
+          '<div class="card-stats">' + stats + '</div>' +
           '<div class="card-footer">' +
             '<span class="type">' + escapeHtml(p.linkType || 'Case study') + '</span>' +
             '<span class="view">View project &rarr;</span>' +
