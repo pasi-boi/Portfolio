@@ -149,8 +149,8 @@ function renderProjectCards(containerEl, projects) {
       '<a class="project-card reveal" style="transition-delay:' + Math.min(i, 5) * 80 + 'ms" href="project.html?slug=' + encodeURIComponent(p.slug) + '">' +
         '<div class="card-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
           visualTop +
-          '<div class="card-stats" style="grid-template-columns:repeat(' + Math.max((p.stats || []).slice(0, 3).length, 1) + ',1fr)">' + stats + '</div>' +
         '</div>' +
+        '<div class="card-stats" style="grid-template-columns:repeat(' + Math.max((p.stats || []).slice(0, 3).length, 1) + ',1fr)">' + stats + '</div>' +
         '<div class="card-body">' +
           '<div class="card-tag">' + escapeHtml(p.tag) + '</div>' +
           '<h3>' + escapeHtml(p.title) + '</h3>' +
@@ -204,8 +204,8 @@ function renderProjectDetail(project) {
       '<p class="summary">' + escapeHtml(project.summary) + '</p>' +
       '<div class="detail-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
         visualTop +
-        '<div class="detail-stats" style="grid-template-columns:repeat(' + Math.max(project.stats ? project.stats.length : 1, 1) + ',1fr)">' + stats + '</div>' +
       '</div>' +
+      '<div class="detail-stats" style="grid-template-columns:repeat(' + Math.max(project.stats ? project.stats.length : 1, 1) + ',1fr)">' + stats + '</div>' +
     '</div>';
 
   var paragraphs = (project.description || []).map(function (p) {
