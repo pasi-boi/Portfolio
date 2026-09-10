@@ -127,13 +127,16 @@ function escapeAttr(str) {
   return escapeHtml(str).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
 }
 
-// Renders the project card grid on the home page.
+// Renders the project card grid on the home page
 function renderProjectCards(containerEl, projects) {
   if (!containerEl) return;
   containerEl.innerHTML = projects.map(function (p, i) {
     var stats = (p.stats || []).slice(0, 3).map(function (s) {
-      return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
+      var hasValue = s.value && s.value.trim().length > 0;
+      var valueHtml = hasValue ? '<span class="v stat-num" data-count="' + escapeAttr(s.value) + '">' + escapeHtml(s.value) + '</span> ' : '';
+      return '<span class="stat-pill">' + valueHtml + '<span class="l">' + escapeHtml(s.label) + '</span></span>';
     }).join('');
+
     var hasImage = !!p.image;
     var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(p.image) + '\')"' : '';
     var visualTop = hasImage
@@ -145,6 +148,7 @@ function renderProjectCards(containerEl, projects) {
             '<div class="tagline">' + escapeHtml(p.tag) + '</div>' +
           '</div>'
         );
+
     return (
       '<a class="project-card reveal" style="transition-delay:' + Math.min(i, 5) * 80 + 'ms" href="project.html?slug=' + encodeURIComponent(p.slug) + '">' +
         '<div class="card-visual' + (hasImage ? ' has-image' : '') + '"' + visualStyle + '>' +
@@ -163,6 +167,9 @@ function renderProjectCards(containerEl, projects) {
       '</a>'
     );
   }).join('');
+
+  initScrollReveal();
+  initCounters(containerEl);
 }
 
 // Renders a single project's detail page based on ?slug= in the URL.
@@ -181,9 +188,11 @@ function renderProjectDetail(project) {
 
   document.title = project.title + ' — Pasi.Live';
 
-  var stats = (project.stats || []).map(function (s) {
-    return '<div><div class="v">' + escapeHtml(s.value) + '</div><div class="l">' + escapeHtml(s.label) + '</div></div>';
-  }).join('');
+ var stats = (project.stats || []).map(function (s) {
+  var hasValue = s.value && s.value.trim().length > 0;
+  var valueHtml = hasValue ? '<span class="v stat-num" data-count="' + escapeAttr(s.value) + '">' + escapeHtml(s.value) + '</span> ' : '';
+  return '<span class="stat-pill">' + valueHtml + '<span class="l">' + escapeHtml(s.label) + '</span></span>';
+}).join('');
 
   var hasImage = !!project.image;
   var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(project.image) + '\')"' : '';
