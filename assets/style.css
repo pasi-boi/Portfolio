@@ -629,9 +629,19 @@ footer .foot-links a:hover{ color:var(--teal); }
 
 @media (max-width: 620px){
   .nav-links{
-    position:fixed; inset:68px 0 auto 0; background:var(--dark-forest); flex-direction:column; gap:0;
-    padding:8px 28px 18px; border-bottom:1px solid var(--line-dark);
-    transform:translateY(-8px); opacity:0; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s ease;
+    position: fixed;
+        inset: 68px 0 auto 0;
+        background: var(--dark-forest);
+        /* gap: 0; */
+        padding: 8px 28px 18px;
+        border-bottom: 1px solid var(--line-dark);
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
   }
   .nav-links.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
   .nav-links a{ padding:12px 0; border-bottom:1px solid var(--line-dark); width:100%; }
