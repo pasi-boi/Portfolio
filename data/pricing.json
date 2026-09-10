@@ -1,12 +1,13 @@
 [
   {
     "name": "Store Build",
-    "price": "$450",
+    "price": "AED 1,850",
     "period": "one-time",
-    "description": "A single Shopify, WordPress or WooCommerce store, built and launched from scratch.",
+    "description": "A professional Shopify, WordPress or WooCommerce store, built, configured and ready to launch.",
     "features": [
       "Store setup & theme customisation",
-      "Up to 1 payment gateway integrated",
+      "Product & collection setup",
+      "Payment gateway integration",
       "GA4, Tag Manager & Meta Pixel setup",
       "Mobile-responsive, SEO-ready structure",
       "1 round of revisions"
@@ -15,33 +16,35 @@
     "featured": false
   },
   {
-    "name": "Growth Retainer",
-    "price": "$800",
+    "name": "Marketplace Management",
+    "price": "AED 2,950",
     "period": "/ month",
-    "description": "Ongoing Meta & Google Ads management plus store optimisation for a single storefront.",
+    "description": "Ongoing Amazon & Noon management focused on improving your marketplace performance and sales.",
     "features": [
-      "Meta Ads & Google Ads management",
-      "Monthly ROAS & CAC reporting via Looker Studio",
-      "CRO recommendations & A/B testing",
-      "SEO maintenance (on-page & technical)",
-      "Email/WhatsApp campaign support"
+      "Amazon & Noon account management",
+      "Product listing & catalogue optimisation",
+      "Pricing, promotions & campaign management",
+      "Inventory & order monitoring",
+      "Marketplace SEO & content optimisation",
+      "Monthly performance reporting"
     ],
-    "cta": "Talk about your store",
+    "cta": "Manage my marketplaces",
     "featured": true
   },
   {
-    "name": "Full Operations",
-    "price": "Custom",
-    "period": "",
-    "description": "End-to-end e-commerce operations across multiple storefronts, marketplaces and regions — the same scope as my full-time work.",
+    "name": "E-commerce Operations",
+    "price": "AED 5,500",
+    "period": "/ month",
+    "description": "End-to-end e-commerce management across marketplaces, online stores and digital marketing channels.",
     "features": [
-      "Multi-region storefront management",
-      "Amazon, Noon & marketplace operations",
-      "Payment gateway integrations (Tabby, Tamara, Stripe, Paymob)",
-      "CRM, IT & analytics stack ownership",
-      "Dedicated monthly strategy calls"
+      "Amazon & Noon marketplace management",
+      "Shopify & multi-store management",
+      "Meta Ads & Google Ads management",
+      "Payment & third-party integrations",
+      "Analytics, CRM & tracking management",
+      "Monthly strategy & performance reporting"
     ],
-    "cta": "Get a custom quote",
+    "cta": "Get started",
     "featured": false
   }
 ]
