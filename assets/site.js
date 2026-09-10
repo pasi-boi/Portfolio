@@ -131,9 +131,6 @@ function escapeAttr(str) {
 function renderProjectCards(containerEl, projects) {
   if (!containerEl) return;
   containerEl.innerHTML = projects.map(function (p, i) {
-    var stats = (p.stats || []).slice(0, 3).map(function (s) {
-      return '<div>' + escapeHtml(s.value) + ' ' + escapeHtml(s.label) + '</div>';
-    }).join('');
     var hasImage = !!p.image;
     var visualStyle = hasImage ? ' style="background-image:url(\'' + escapeAttr(p.image) + '\')"' : '';
     var visualTop = hasImage
@@ -154,7 +151,6 @@ function renderProjectCards(containerEl, projects) {
           '<div class="card-tag">' + escapeHtml(p.tag) + '</div>' +
           '<h3>' + escapeHtml(p.title) + '</h3>' +
           '<p>' + escapeHtml(p.summary) + '</p>' +
-          '<div class="card-stats">' + stats + '</div>' +
           '<div class="card-footer">' +
             '<span class="type">' + escapeHtml(p.linkType || 'Case study') + '</span>' +
             '<span class="view">View project &rarr;</span>' +
