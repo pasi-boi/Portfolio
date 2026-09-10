@@ -656,3 +656,37 @@ footer .foot-links a:hover{ color:var(--teal); }
   .hero{ padding:52px 0 60px; }
   .cta-strip .wrap{ flex-direction:column; align-items:flex-start; }
 }
+/* Card stats pill container */
+.card-stats, .detail-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+/* Light, rounded tag pills */
+.card-stats .stat-pill, .detail-stats .stat-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  color: #222222;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.card-stats .stat-pill .v, .detail-stats .stat-pill .v {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #0f6b57;
+  margin-right: 5px;
+}
+
+.card-stats .stat-pill .l, .detail-stats .stat-pill .l {
+  font-size: 0.82rem;
+  color: #44534d;
+}
