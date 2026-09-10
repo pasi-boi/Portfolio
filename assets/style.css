@@ -304,15 +304,23 @@ section{ padding:84px 0; }
   color:var(--pure-white);
 }
 .card-visual.has-image{
-  min-height: 220px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding:0;
+  aspect-ratio:16 / 10;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
 }
 .card-visual.has-image::before{
   content:"";
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(6,43,36,0.05) 0%, rgba(6,43,36,0.4) 50%, rgba(6,43,36,0.94) 100%);
+  background:linear-gradient(180deg, rgba(6,43,36,0) 0%, rgba(6,43,36,0.04) 50%, rgba(6,43,36,0.9) 100%);
+}
+.card-photo-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.82rem;
+  color:var(--pure-white);
+  padding:16px 20px 10px;
+  text-shadow:0 1px 4px rgba(6,43,36,0.85);
 }
 .card-visual > *{ position:relative; z-index:1; }
 .card-browserbar{
@@ -342,6 +350,11 @@ section{ padding:84px 0; }
   border-radius:6px;
   overflow:hidden;
   margin:0 4px;
+}
+.card-visual.has-image .card-stats{
+  transform:none;
+  margin:0 14px 14px;
+  border-radius:6px;
 }
 .card-stats div{
   background:var(--emerald);
@@ -397,11 +410,11 @@ section{ padding:84px 0; }
   background-size:cover;
   background-position:center;
 }
-.detail-visual.has-image{ min-height:260px; display:flex; flex-direction:column; justify-content:flex-end; }
+.detail-visual.has-image{ min-height:280px; display:flex; flex-direction:column; justify-content:flex-end; }
 .detail-visual.has-image::before{
   content:"";
   position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(6,43,36,0.05) 0%, rgba(6,43,36,0.35) 45%, rgba(6,43,36,0.95) 100%);
+  background:linear-gradient(180deg, rgba(6,43,36,0) 0%, rgba(6,43,36,0.05) 55%, rgba(6,43,36,0.9) 100%);
 }
 .detail-visual > *{ position:relative; z-index:1; }
 .detail-browserbar{
@@ -648,4 +661,3 @@ footer .foot-links a:hover{ color:var(--teal); }
   .hero{ padding:52px 0 60px; }
   .cta-strip .wrap{ flex-direction:column; align-items:flex-start; }
 }
-
