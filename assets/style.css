@@ -194,66 +194,61 @@ img,svg{ max-width:100%; display:block; }
   text-align:center;
 }
 
-/* ---------- ROTATING GLOBE ---------- */
-.globe-wrap{ position:relative; width:100%; max-width:280px; }
-.globe-svg{ width:100%; height:auto; display:block; overflow:visible; }
-.globe-sphere{ opacity:0.9; }
-.globe-outline{ fill:none; stroke:rgba(217,240,233,0.4); stroke-width:1.4; }
-.lat-line{ fill:none; stroke:rgba(217,240,233,0.16); stroke-width:1; }
-.meridian{
-  fill:none;
-  stroke:rgba(27,138,115,0.6);
-  stroke-width:1.2;
-  animation:spin-meridian 9s linear infinite;
-}
-.meridian.m2{ animation-delay:-1.8s; }
-.meridian.m3{ animation-delay:-3.6s; }
-.meridian.m4{ animation-delay:-5.4s; }
-.meridian.m5{ animation-delay:-7.2s; }
-@keyframes spin-meridian{
-  0%{ rx:0; opacity:0.1; }
-  50%{ rx:126; opacity:0.75; }
-  100%{ rx:0; opacity:0.1; }
-}
-.loc-dot{ fill:var(--teal); }
-.loc-ping{
-  fill:none;
-  stroke:var(--teal);
-  stroke-width:1.4;
-  animation:loc-ping 2.6s ease-out infinite;
-}
-.loc.d2 .loc-ping{ animation-delay:0.5s; }
-.loc.d3 .loc-ping{ animation-delay:1s; }
-.loc.d4 .loc-ping{ animation-delay:1.5s; }
-@keyframes loc-ping{
-  0%{ r:4; opacity:0.8; }
-  100%{ r:20; opacity:0; }
-}
-.orbit-ring{
-  position:absolute; inset:6%;
-  border:1px dashed rgba(217,240,233,0.14);
+/* ---------- TOOL-LOGO ORBIT ---------- */
+.orbit-wrap{ position:relative; width:100%; max-width:280px; aspect-ratio:1 / 1; margin:0 auto; }
+
+.orbit-ring-deco{
+  position:absolute; inset:8%;
+  border:1px dashed rgba(217,240,233,0.16);
   border-radius:50%;
-  animation:orbit-spin 16s linear infinite;
+  animation:orbit-spin 22s linear infinite;
 }
-.orbit-ring-2{ inset:-2%; animation-duration:24s; animation-direction:reverse; border-style:solid; border-color:transparent; }
-.orbit-dot{
-  position:absolute; top:-4px; left:50%;
-  width:8px; height:8px; margin-left:-4px;
-  border-radius:50%;
-  background:var(--emerald);
-  box-shadow:0 0 10px 2px rgba(15,107,87,0.65);
-}
-.orbit-ring-2 .orbit-dot{ background:var(--teal); box-shadow:0 0 10px 2px rgba(27,138,115,0.55); }
+.orbit-ring-deco-2{ inset:-4%; animation-duration:30s; animation-direction:reverse; border-style:solid; border-color:rgba(217,240,233,0.08); }
 @keyframes orbit-spin{ from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
-.globe-legend{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:8px 16px;
-  margin-top:18px;
+
+.orbit-hub{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:84px; height:84px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--teal), var(--emerald) 55%, var(--deep-emerald) 100%);
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:8px; box-sizing:border-box;
+  box-shadow:0 0 0 6px rgba(27,138,115,0.15);
+  z-index:3;
 }
-.globe-legend span{ display:flex; align-items:center; gap:6px; font-size:0.78rem; color:rgba(217,240,233,0.75); }
-.globe-legend i{ width:8px; height:8px; border-radius:50%; background:var(--teal); display:inline-block; }
+.orbit-hub span{ font-family:'Space Grotesk', sans-serif; font-size:0.68rem; font-weight:600; color:var(--pure-white); line-height:1.25; }
+
+.orbit-logo{
+  position:absolute;
+  width:56px; height:56px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:var(--pure-white);
+  border:1px solid var(--line-dark);
+  display:flex; align-items:center; justify-content:center;
+  padding:10px; box-sizing:border-box;
+  box-shadow:0 8px 18px -8px rgba(6,43,36,0.6);
+  z-index:2;
+  opacity:0;
+  animation:orbit-in 0.6s ease forwards, orbit-pulse 3.4s ease-in-out infinite;
+}
+.orbit-logo img{ width:100%; height:100%; object-fit:contain; display:block; }
+.orbit-logo.op1{ top:20%; left:50%; animation-delay:0.1s, 1.2s; }
+.orbit-logo.op2{ top:42%; left:80%; animation-delay:0.25s, 1.9s; }
+.orbit-logo.op3{ top:77%; left:69%; animation-delay:0.4s, 2.6s; }
+.orbit-logo.op4{ top:77%; left:31%; animation-delay:0.55s, 0.5s; }
+.orbit-logo.op5{ top:42%; left:20%; animation-delay:0.7s, 3.3s; }
+
+@keyframes orbit-in{
+  from{ opacity:0; transform:translate(-50%,-50%) scale(0.5); }
+  to{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+}
+@keyframes orbit-pulse{
+  0%,100%{ box-shadow:0 8px 18px -8px rgba(6,43,36,0.6); }
+  50%{ box-shadow:0 8px 22px -6px rgba(27,138,115,0.55); }
+}
 @media (prefers-reduced-motion: reduce){
-  .meridian, .loc-ping, .orbit-ring, .orbit-ring-2{ animation:none; }
-  .meridian{ rx:70; opacity:0.4; }
+  .orbit-ring-deco, .orbit-ring-deco-2{ animation:none; }
+  .orbit-logo{ animation:none; opacity:1; }
 }
 
 /* ---------- SECTION SHELL ---------- */
@@ -629,19 +624,9 @@ footer .foot-links a:hover{ color:var(--teal); }
 
 @media (max-width: 620px){
   .nav-links{
-    position: fixed;
-        inset: 68px 0 auto 0;
-        background: var(--dark-forest);
-        /* gap: 0; */
-        padding: 8px 28px 18px;
-        border-bottom: 1px solid var(--line-dark);
-        transform: translateY(-8px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease, transform 0.2s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+    position:fixed; inset:68px 0 auto 0; background:var(--dark-forest); flex-direction:column; gap:0;
+    padding:8px 28px 18px; border-bottom:1px solid var(--line-dark);
+    transform:translateY(-8px); opacity:0; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s ease;
   }
   .nav-links.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
   .nav-links a{ padding:12px 0; border-bottom:1px solid var(--line-dark); width:100%; }
