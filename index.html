@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=10">
 </head>
 <body>
 
@@ -61,52 +61,17 @@
     </div>
 
     <div class="net-card">
-      <div class="globe-wrap">
-        <div class="orbit-ring"><span class="orbit-dot"></span></div>
-        <div class="orbit-ring orbit-ring-2"><span class="orbit-dot"></span></div>
-        <svg class="globe-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating globe marking the regions Pasindu has built and launched e-commerce infrastructure in: UAE, Sri Lanka, Sweden and wider Europe">
-          <defs>
-            <radialGradient id="globeGrad" cx="35%" cy="32%" r="75%">
-              <stop offset="0%" stop-color="#1B8A73"/>
-              <stop offset="55%" stop-color="#0F6B57"/>
-              <stop offset="100%" stop-color="#062B24"/>
-            </radialGradient>
-          </defs>
-          <circle class="globe-sphere" cx="150" cy="150" r="128" fill="url(#globeGrad)"/>
-          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="30"/>
-          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="64"/>
-          <ellipse class="lat-line" cx="150" cy="150" rx="128" ry="98"/>
-          <ellipse class="meridian m1" cx="150" cy="150" rx="0" ry="128"/>
-          <ellipse class="meridian m2" cx="150" cy="150" rx="0" ry="128"/>
-          <ellipse class="meridian m3" cx="150" cy="150" rx="0" ry="128"/>
-          <ellipse class="meridian m4" cx="150" cy="150" rx="0" ry="128"/>
-          <ellipse class="meridian m5" cx="150" cy="150" rx="0" ry="128"/>
-          <circle class="globe-outline" cx="150" cy="150" r="128"/>
-          <g class="loc d1">
-            <circle class="loc-ping" cx="176" cy="150" r="4"/>
-            <circle class="loc-dot" cx="176" cy="150" r="4"/>
-          </g>
-          <g class="loc d2">
-            <circle class="loc-ping" cx="108" cy="188" r="4"/>
-            <circle class="loc-dot" cx="108" cy="188" r="4"/>
-          </g>
-          <g class="loc d3">
-            <circle class="loc-ping" cx="122" cy="86" r="4"/>
-            <circle class="loc-dot" cx="122" cy="86" r="4"/>
-          </g>
-          <g class="loc d4">
-            <circle class="loc-ping" cx="188" cy="104" r="4"/>
-            <circle class="loc-dot" cx="188" cy="104" r="4"/>
-          </g>
-        </svg>
+      <div class="orbit-wrap">
+        <div class="orbit-ring-deco"></div>
+        <div class="orbit-ring-deco orbit-ring-deco-2"></div>
+        <div class="orbit-hub"><span>Tools I run daily</span></div>
+        <div class="orbit-logo op1"><img src="images/shopify.png" alt="Shopify"></div>
+        <div class="orbit-logo op2"><img src="images/google-ads.webp" alt="Google Ads"></div>
+        <div class="orbit-logo op3"><img src="images/amazon.png" alt="Amazon"></div>
+        <div class="orbit-logo op4"><img src="images/noon.png" alt="Noon"></div>
+        <div class="orbit-logo op5"><img src="images/meta.png" alt="Meta"></div>
       </div>
-      <div class="globe-legend">
-        <span><i></i>GCC</span>
-        <span><i></i>Europe</span>
-        <span><i></i>Sri Lanka</span>
-        <span><i></i>Australia</span>
-      </div>
-      <div class="cap">Building e-commerce infrastructure across all regions</div>
+      <div class="cap">Platforms and ad networks I build and run campaigns on, daily</div>
     </div>
   </div>
 </header>
@@ -332,7 +297,7 @@
   </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=10"></script>
 <script>
   loadProjects().then(function (projects) {
     renderProjectCards(document.getElementById('projectGrid'), projects);
