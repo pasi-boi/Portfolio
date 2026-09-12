@@ -129,27 +129,38 @@
     "image": "images/Screenshot 2026-09-10 155643.png"
   },
   {
-    "slug": "freelance-builds",
-    "domainLabel": "Freelance client sites",
-    "tag": "Freelance · Shopify · WordPress · Magento · Wix",
-    "title": "Freelance E-commerce & Website Builds",
-    "summary": "Independent web development work since 2022 — designing, building and deploying custom websites and e-commerce stores end to end for clients outside full-time roles.",
-    "linkType": "Ongoing",
-    "stats": [
-      { "value": "2022", "label": "Started freelancing" },
-      { "value": "4", "label": "Platforms worked in" },
-      { "value": "End-to-end", "label": "Client ownership" }
-    ],
-    "description": [
-      "Alongside full-time roles, I've run a freelance web development practice since 2022 — building custom websites and e-commerce stores for clients on WordPress, Shopify, Magento and Wix.",
-      "Projects are managed end to end: initial design, build, deployment, and then training the client to manage their own content once the site is live.",
-      "This is also where a lot of the marketplace and dropshipping experience started — running order processing, customer service and fulfilment across eBay, AliExpress, Daraz and Kapruka between 2021 and 2022."
-    ],
-    "highlights": [
-      "Full client lifecycle: design, build, deploy, train",
-      "Comfortable across WordPress, Shopify, Magento and Wix",
-      "Open to new freelance projects — get in touch below"
-    ],
-    "image": ""
+"slug": "oserth-global-ecommerce",
+"domainLabel": "oserth.com · oserth.ae · oserth.se · eu.oserth.com",
+"tag": "E-commerce · Shopify · D2C · Multi-market · Global",
+"title": "Oserth Haircare — Global D2C E-commerce Platform Development & Expansion",
+"summary": "Developed and managed Oserth Haircare's global Shopify e-commerce ecosystem across GCC, Europe, Sweden and Western markets, building localized storefronts and implementing the technology, payments, analytics and retention infrastructure behind international growth.",
+"linkType": "Case study",
+"stats": [
+{
+"value": "4",
+"label": "Regional storefronts"
+},
+{
+"value": "4+",
+"label": "Markets & regions"
+},
+{
+"value": "D2C",
+"label": "Global e-commerce model"
+}
+],
+"description": [
+"Oserth Haircare required a scalable global e-commerce infrastructure capable of serving customers across different regions while maintaining a consistent brand experience. I developed and managed localized Shopify storefronts covering the GCC, Sweden, wider Europe and Western markets.",
+"The project involved implementing and managing regional payment solutions including Shopify Payments, Stripe, Tabby and other third-party services, alongside multi-currency and VAT configuration. I also configured analytics tracking, automation workflows and supporting e-commerce integrations across the different storefronts.",
+"Beyond the technical infrastructure, I continuously optimized the customer journey and conversion experience while implementing retention tools including loyalty programmes and other growth-focused improvements. This created a connected D2C ecosystem capable of supporting Oserth's expansion across multiple international markets."
+],
+"highlights": [
+"Four localized Shopify storefronts across GCC, Sweden, Europe and Western markets",
+"Regional payments, multi-currency, VAT, analytics and automation infrastructure",
+"Conversion optimization and loyalty initiatives supporting international D2C growth"
+],
+"image": ""
+}
+
   }
 ]
