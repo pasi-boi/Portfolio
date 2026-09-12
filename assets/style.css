@@ -13,7 +13,7 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
@@ -21,6 +21,7 @@ html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
+  overflow-x:hidden;
   background:var(--off-white);
   color:var(--charcoal);
   font-family:'IBM Plex Sans', -apple-system, sans-serif;
@@ -49,6 +50,7 @@ img,svg{ max-width:100%; display:block; }
 .nav{
   position:sticky; top:0; z-index:50;
   background:rgba(6,43,36,0.92);
+  -webkit-backdrop-filter:blur(8px);
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line-dark);
 }
@@ -113,13 +115,25 @@ img,svg{ max-width:100%; display:block; }
 
 /* ---------- HERO ---------- */
 .hero{
-  background:
-    radial-gradient(680px 420px at 82% -10%, rgba(27,138,115,0.35), transparent 60%),
-    linear-gradient(180deg, var(--dark-forest), var(--deep-emerald) 130%);
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg, var(--dark-forest), var(--deep-emerald) 130%);
   color:var(--pure-white);
   padding:76px 0 84px;
 }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-15%;
+  background:radial-gradient(680px 420px at 82% -10%, rgba(27,138,115,0.35), transparent 60%);
+  background-repeat:no-repeat;
+  will-change:transform;
+  pointer-events:none;
+  z-index:0;
+}
 .hero .wrap{
+  position:relative;
+  z-index:1;
   display:grid;
   grid-template-columns:1.15fr 0.85fr;
   gap:56px;
@@ -240,6 +254,7 @@ img,svg{ max-width:100%; display:block; }
 .ge-orbit{
   position:absolute; inset:0;
   animation:ge-spin var(--ge-duration,48s) linear infinite;
+  will-change:transform;
 }
 .growth-engine.is-paused .ge-orbit,
 .growth-engine.is-paused .ge-node-spin{
@@ -683,16 +698,15 @@ footer .foot-links a:hover{ color:var(--teal); }
 }
 
 /* ---------- HERO AMBIENT MOTION ---------- */
-.hero{
-  background-size:160% 160%;
+.hero::before{
   animation:hero-drift 16s ease-in-out infinite alternate;
 }
 @keyframes hero-drift{
-  0%{ background-position:80% 0%; }
-  100%{ background-position:20% 30%; }
+  0%{ transform:translate3d(4%, -3%, 0); }
+  100%{ transform:translate3d(-4%, 3%, 0); }
 }
 @media (prefers-reduced-motion: reduce){
-  .hero{ animation:none; }
+  .hero::before{ animation:none; }
 }
 
 /* ---------- RESPONSIVE ---------- */
