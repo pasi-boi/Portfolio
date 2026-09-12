@@ -42,7 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   initScrollReveal();
   initCounters(document);
+  initGrowthEngine();
 });
+
+// Pauses the hero orbit animation while a node is hovered or focused,
+// so the tooltip and enlarged icon stay still and readable.
+function initGrowthEngine() {
+  var engine = document.querySelector('.growth-engine');
+  if (!engine) return;
+  var icons = engine.querySelectorAll('.ge-node-icon');
+  icons.forEach(function (icon) {
+    icon.addEventListener('mouseenter', function () { engine.classList.add('is-paused'); });
+    icon.addEventListener('mouseleave', function () { engine.classList.remove('is-paused'); });
+    icon.addEventListener('focus', function () { engine.classList.add('is-paused'); });
+    icon.addEventListener('blur', function () { engine.classList.remove('is-paused'); });
+  });
+}
 
 // Observes every .reveal element currently in the DOM and fades/slides it in
 // the first time it enters the viewport. Safe to call again after injecting
