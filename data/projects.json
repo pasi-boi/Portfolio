@@ -5,7 +5,7 @@
 "tag": "E-commerce · Shopify · B2C & B2B · Beauty & Cosmetics · GCC",
 "title": "Najafi Cosmetics — Multi-Platform E-commerce Network",
 "summary": "Designed and developed three Shopify e-commerce platforms for Najafi Cosmetics, covering GCC retail, wholesale B2B, and professional beauty customers, with each storefront tailored to its specific audience and business requirements.",
-"linkType": "Case study",
+"linkType": "E-commerce Project",
 "stats": [
 {
 "value": "3",
@@ -38,7 +38,7 @@
     "tag": "Loyalty programme · Retention · najafi.ae",
     "title": "Najafi Beauty Wallet — Loyalty Programme",
     "summary": "Designed and launched a loyalty programme from scratch to convert one-time beauty shoppers into repeat customers, growing the subscriber base and lifting repeat purchase rate.",
-    "linkType": "Case study",
+    "linkType": "Loyalty Program",
     "stats": [
       { "value": "0 → 1", "label": "Built from scratch" },
       { "value": "↑", "label": "Repeat purchase rate" },
@@ -62,7 +62,7 @@
     "tag": "Marketplace · Amazon · Brand registry",
     "title": "Oserth — Amazon Brand Storefront & Marketplace Presence",
     "summary": "Registered and built out Oserth's branded presence on Amazon, alongside Amazon Sponsored Ads management and FBA integration that grew sales across the wider catalogue.",
-    "linkType": "Case study",
+    "linkType": "E-commerce Project",
     "stats": [
       { "value": "30%", "label": "Sales growth from FBA integration" },
       { "value": "2", "label": "Amazon seller accounts managed" },
@@ -86,7 +86,7 @@
     "tag": "Agency · Multi-marketplace · Paid media",
     "title": "Spec Brite Group — Marketplace & Ads Operations",
     "summary": "Built and optimised Shopify/WordPress stores while running Meta, Google and Amazon Ads across multiple marketplace listings, with a consistent focus on ROAS.",
-    "linkType": "Case study",
+    "linkType": "E-commerce Project",
     "stats": [
       { "value": "3", "label": "Ad platforms managed" },
       { "value": "3+", "label": "Marketplaces synced" },
@@ -110,7 +110,7 @@
     "tag": "E-commerce · Shopify · Multi-country · UAE · Lebanon · Oman",
     "title": "Wellness Terminal — Multi-Country E-commerce Expansion",
     "summary": "Developed and managed multi-country e-commerce websites for Wellness Terminal across the UAE, Lebanon and Oman, using regional subdomains, Shopify and AWS DNS configuration to support localized market expansion.",
-    "linkType": "Case study",
+    "linkType": "E-commerce Project",
     "stats": [
       { "value": "3", "label": "Markets supported" },
       { "value": "Shopify", "label": "E-commerce platform" },
@@ -134,7 +134,7 @@
 "tag": "E-commerce · Shopify · D2C · Multi-market · Global",
 "title": "Oserth Haircare — Global D2C E-commerce Platform Development & Expansion",
 "summary": "Developed and managed Oserth Haircare's global Shopify e-commerce ecosystem across GCC, Europe, Sweden and Western markets, building localized storefronts and implementing the technology, payments, analytics and retention infrastructure behind international growth.",
-"linkType": "Case study",
+"linkType": "E-commerce Project",
 "stats": [
 {
 "value": "4",
